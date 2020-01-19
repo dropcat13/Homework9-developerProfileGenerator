@@ -1,6 +1,8 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("util");
+const axios = require("axios");
+const html = require("./generateHTML");
 
 const writeFileAsync = util.promisify(fs.writeFile);
 
@@ -23,23 +25,47 @@ function promptUser() {
     },
     {
       type: "input",
-      name: "github",
+      name: "username",
       message: "Enter your GitHub Username"
     },
   ]);
 }
 
-function generateHTML(answers);
+function getInfo(){
+    .then(function({ username }) {
+        const queryUrl = `https://api.github.com/users/${username}/repos?per_page=100`;
+        
+        axios.get(queryUrl).then(function(res) {
+            const repoNo = res.data.map(function(repo) {
+                return repo.name;
+            });
+            const profileImage = res.data.map(function(repo) {
+                return repo.avatar_url;
+            });
+            const userName = res.data.map(function(repo) {
+                return repo.name;
+            });
+            const profile = 
+            const userBio = 
+            const followers = 
+            const stars = 
+            const following = 
+            const blog =
 
-promptUser()
-  .then(function(answers) {
-    const html = generateHTML(answers);
+            
+            const repoNamesStr = repoNames.join("\n");
+            
+            fs.writeFile("repos.txt", repoNamesStr, function(err) {
+                if (err) {
+                    throw err;
+                }
+                
+                console.log(`Saved ${repoNames.length} repos`);
+            });
+        });       
+    }); 
+}  
+    
+// User location via Google Maps
 
-    return writeFileAsync("index.html", html);
-  })
-  .then(function() {
-    console.log("Successfully wrote to index.html");
-  })
-  .catch(function(err) {
-    console.log(err);
-  });
+function generateHTML(data)
