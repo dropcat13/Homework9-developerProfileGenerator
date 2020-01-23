@@ -87,7 +87,7 @@ function generateHTML(data){
    <ul class="list-group">
    <li class="list-group-item">My blog: ${userinfo.blog}</li>
    <li class="list-group-item">My bio: ${userinfo.bio}</li>
-   <li class="list-group-item">I have ${userinfo.public_repos.length} public repos</li>
+   <li class="list-group-item">I have ${userinfo.public_repos} public repos</li>
    <li class="list-group-item">I have ${userinfo.followers} followers</li>
    <li class="list-group-item">I have * Number of GitHub stars - work this out too </li>
    <li class="list-group-item">I follow ${userinfo.following} other users</li>-->
