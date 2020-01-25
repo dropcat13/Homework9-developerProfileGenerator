@@ -63,37 +63,48 @@ console.log(userinfo);
     
 // User location via Google Maps - find out more about this and sort out.
 
-function generateHTML(data){
- return `
- <!DOCTYPE html>
- <html lang="en">
- <head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-   <title>Document</title>
- </head>
- <body>  
- <div class="jumbotron jumbotron-fluid">
- <div class="container">
-   <h1 class="display-4">Hi! My name is ${answers.name}</h1>
-   <p class="lead">I am from ${answers.location}.</p>
- </div>
-</div>
-   <h3><span class="badge badge-secondary">Contact Me</span></h3>
-   <li class="list-group-item">My GitHub username is ${answers.github}</li>
-   <img src='${userinfo.avatar_url}'>
-   <!-- location via google maps ${userinfo.location}-->
-   <ul class="list-group">
-   <li class="list-group-item">My blog: ${userinfo.blog}</li>
-   <li class="list-group-item">My bio: ${userinfo.bio}</li>
-   <li class="list-group-item">I have ${userinfo.public_repos} public repos</li>
-   <li class="list-group-item">I have ${userinfo.followers} followers</li>
-   <li class="list-group-item">I have * Number of GitHub stars - work this out too </li>
-   <li class="list-group-item">I follow ${userinfo.following} other users</li>-->
-   </ul>
- </body>
- </html>`;
-};
+// to sent things to your html webpage
+//  app.get("/", function(req, res) {
+//   res.send("Welcome to the Star Wars Page!");
+// });
+
+// app.get("/yoda", function(req, res) {
+//   res.json(yoda);
+// });
+
+generateHTML(data)
+
+// {
+//  return `
+//  <!DOCTYPE html>
+//  <html lang="en">
+//  <head>
+//    <meta charset="UTF-8">
+//    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+//    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+//    <title>Document</title>
+//  </head>
+//  <body>  
+//  <div class="jumbotron jumbotron-fluid">
+//  <div class="container">
+//    <h1 class="display-4">Hi! My name is ${answers.name}</h1>
+//    <p class="lead">I am from ${answers.location}.</p>
+//  </div>
+// </div>
+//    <h3><span class="badge badge-secondary">Contact Me</span></h3>
+//    <li class="list-group-item">My GitHub username is ${answers.github}</li>
+//    <img src='${userinfo.avatar_url}'>
+//    <!-- location via google maps ${userinfo.location}-->
+//    <ul class="list-group">
+//    <li class="list-group-item">My blog: ${userinfo.blog}</li>
+//    <li class="list-group-item">My bio: ${userinfo.bio}</li>
+//    <li class="list-group-item">I have ${userinfo.public_repos} public repos</li>
+//    <li class="list-group-item">I have ${userinfo.followers} followers</li>
+//    <li class="list-group-item">I have * Number of GitHub stars - work this out too </li>
+//    <li class="list-group-item">I follow ${userinfo.following} other users</li>-->
+//    </ul>
+//  </body>
+//  </html>`;
+// };
 
 //  npm i electron@5.0.3 electron-html-to@2.6.0 - to convert to a pdf.
